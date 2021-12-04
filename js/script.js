@@ -14,6 +14,32 @@ document.querySelector('#search-close').onclick = ()=>{
   searchBtn.classList.remove('active')
 }
 
+
+// scroll js code**********
+window.onscroll = ()=>{
+  document.querySelector('header').classList.remove('active');
+  if(window.scrollY > 0){
+    document.querySelector('header').classList.add('active');
+  }else{
+    document.querySelector('header').classList.remove('active');
+
+  }
+}
+// window.onload = ()=>{
+//   if(window.srcollY > 0){
+//     document.querySelector('header').classList.add('active');
+//   }else{
+//     document.querySelector('header').classList.remove('active');
+//   }
+// }
+
+
+
+
+
+
+// slide js code********/
+
 const slides = document.querySelector('.slides'); 
 //전체 슬라이드 컨테이너 
 const slideImg = document.querySelectorAll('.slides li'); 
@@ -35,10 +61,11 @@ var delay = 300;
 var timer = null;
 window.onresize = () => {
   clearTimeout(timer);
+  // console.log(window.innerWidth)
   timer = setTimeout(() =>{
     slideWidth = window.innerWidth;
     slides.style.width = slideWidth * slideCount + 'px'; 
-    console.log('hi');
+    console.log(window.innerWidth)
   },delay)
 }
 function moveSlide(num) { 
@@ -60,3 +87,4 @@ next.addEventListener('click', function () {
     moveSlide(currentIdx + 1); 
   } 
 });
+

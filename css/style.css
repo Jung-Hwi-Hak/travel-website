@@ -39,14 +39,20 @@ header{
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: tomato; */
+  background-color: rgba(0, 0, 0, 0.3);
+}
+header.active{
+  background-color: #fff;
+}
+header.active *:not(i){
+  color: #000;
 }
 header h1{
   margin-right: auto;
 }
 header h1 a{
   font-size: 2.5rem;
-  color: black;
+  color: #fff;
 }
 header h1 a i{
   color: #219150;
@@ -62,7 +68,7 @@ header nav li a{
   display: flex;
   width: 100%;
   font-size: 1.7rem;
-  color: #000;
+  color: #fff;
   transition: 0.3s;
   align-items: center;
 }
@@ -77,7 +83,7 @@ header .icons > *{
   font-size: 2.5rem;
   margin-left: 2rem;
   cursor: pointer;
-  color: #000;
+  color: rgba(255, 255, 255, 0.5);
   transition: 0.3s;
 }
 header nav li a:hover,
@@ -148,8 +154,9 @@ fieldset label:hover{
 /* home section start */
 section:first-of-type{
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  /* margin-bottom: 25rem; */
 }
 section:first-of-type > a{
   position: absolute;
@@ -165,6 +172,9 @@ section:first-of-type > a{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+section:first-of-type > a:hover{
+  color: #219150;
 }
 section:first-of-type > a:first-of-type{
   left: 0;
@@ -234,15 +244,115 @@ section:first-of-type div a{
   font-size: 1.7rem;
   padding: 1rem 3rem;
   color: #333;
+  font-weight: bold;
 }
 section:first-of-type div a:hover{
   background-color: #333;
   color: #fff;
 }
 
+/* category section start */
+section:nth-of-type(2){
+  text-align: center;
+  color: #000;
+  padding: 2rem 10% 0 10%;
+  margin-bottom: 10rem;
+}
+section:nth-of-type(2) h2{
+  color: #219150;
+  font-size: 5rem;
+}
+section:nth-of-type(2) ul{
+  padding: 10rem 0 0 0;
+}
+section:nth-of-type(2) ul:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+section:nth-of-type(2) li{
+  float: left;
+  width: 15%;
+  list-style: none;
+}
+section:nth-of-type(2) li img{
+  width: 100%;
+  border-radius: 50%;
+}
+section:nth-of-type(2) li:not(:first-of-type){
+  margin-left: 13.3%;
+}
+section:nth-of-type(2) figcaption{
+  font-size: 1.5rem;
+}
+section:nth-of-type(2) figcaption h3{
+  color: #219150;
+}
+section:nth-of-type(2) figcaption *:not(:last-child){
+  margin-bottom: 1.5rem;
+}
+section:nth-of-type(2) figcaption a{
+  display: block;
+  border: 1px solid #333;
+  background: none;
+  font-size: 1.7rem;
+  line-height: 35px;
+  color: #333;
+  font-weight: bold;
+}
+section:nth-of-type(2) figcaption a:hover{
+  color: #fff;
+  background-color: #333;
+}
+/* section:nth-of-type(3) */
+section:nth-of-type(3){
+  padding: 0 10% 0 10%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
+section:nth-of-type(3) figure{
+  width: 100%;
+  padding: 5rem 5rem;
+}
+section:nth-of-type(3) figure:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+section:nth-of-type(3) figure img{
+  float: left;
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+}
+section:nth-of-type(3) figcaption{
+  float: left;
+  width: 45%;
+  margin-left: 5%;
+}
+section:nth-of-type(3) figcaption h3{
+  font-size: 4rem;
+  color: #219150;
+}
+section:nth-of-type(3) figcaption p{
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+section:nth-of-type(3) figcaption p:first-of-type{
+  padding: 2rem 0;
+}
 
-
+section:nth-of-type(3) figcaption a{
+  display: block;
+  border: 1px solid #333;
+  background: none;
+  font-size: 1.7rem;
+  line-height: 35px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  width: 30%;
+}
 /* media queries */
 
 @media (max-width:1200px){
@@ -274,6 +384,7 @@ section:first-of-type div a:hover{
     left: 0;
     box-shadow: 0 0 0 100vw rgba(0,0,0,.8);
   }
+  
   header nav li:nth-of-type(n+3){
     margin-left: inherit;
   }
@@ -295,17 +406,120 @@ section:first-of-type div a:hover{
   nav ul li *,
   nav ul li a{
     font-size: 2.5rem;
+    color: #000;
   }
   .search-form fieldset{
     width: 450px;
   }
+  section:first-of-type > ul li:not(:nth-of-type(2)){
+    justify-content: flex-start;
+  }
+
+  /* category section start */
+  section:nth-of-type(2){
+    text-align: center;
+    color: #000;
+    padding: 2rem 10% 0 10%;
+  }
+  section:nth-of-type(2) h2{
+    color: #219150;
+    font-size: 5rem;
+  }
+  section:nth-of-type(2) ul{
+    padding: 10rem 0 0 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  section:nth-of-type(2) ul:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  section:nth-of-type(2) li{
+    float: inherit;
+    width: 40%;
+    list-style: none;
+
+  }
+  section:nth-of-type(2) li:not(:last-child){
+    margin-bottom: 20px;
+  }
+  section:nth-of-type(2) li img{
+    width: 100%;
+    border-radius: 50%;
+  }
+  section:nth-of-type(2) li:not(:first-of-type){
+    margin-left: inherit;
+  }
+  section:nth-of-type(2) figcaption{
+    font-size: 1.5rem;
+  }
+  section:nth-of-type(2) figcaption h3{
+    color: #219150;
+  }
+  section:nth-of-type(2) figcaption *:not(:last-child){
+    margin-bottom: 1.5rem;
+  }
+  section:nth-of-type(2) figcaption a{
+    display: block;
+    border: 1px solid #333;
+    background: none;
+    font-size: 1.7rem;
+    line-height: 35px;
+    color: #333;
+    font-weight: bold;
+  }
+  section:nth-of-type(2) figcaption a:hover{
+    color: #fff;
+    background-color: #333;
+  }
 }
-
-
-/* font-media */
 @media (max-width:990px){
   html{
     font-size: 55%;
+  }
+  section:nth-of-type(3) figure{
+
+  }
+  section:nth-of-type(3) figure:after{
+    content: inherit;
+    display: inherit;
+    clear: inherit;
+  }
+  section:nth-of-type(3) figure img{
+    width: inherit;
+    float: inherit;
+    width: inherit;
+  }
+  section:nth-of-type(3) figcaption{
+    float: inherit;
+    width: inherit;
+    margin-left: inherit;
+    display: flex;
+    flex-flow: column;
+  }
+  section:nth-of-type(3) figcaption h3{
+    font-size: 4rem;
+    color: #219150;
+  }
+  section:nth-of-type(3) figcaption p{
+    font-size: 2rem;
+    line-height: 2;
+  }
+  section:nth-of-type(3) figcaption p:first-of-type{
+    padding: 2rem 0 0 0;
+  }
+  section:nth-of-type(3) figcaption a{
+    display: block;
+    border: 1px solid #333;
+    background: none;
+    font-size: 1.7rem;
+    line-height: 35px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
   }
 }
 @media (max-width:450px){
